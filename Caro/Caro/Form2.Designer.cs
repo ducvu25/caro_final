@@ -52,12 +52,13 @@
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.btnBoot);
             this.panel2.Controls.Add(this.btnPlayer);
-            this.panel2.Location = new System.Drawing.Point(91, 307);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel2.Location = new System.Drawing.Point(68, 249);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(512, 135);
+            this.panel2.Size = new System.Drawing.Size(384, 110);
             this.panel2.TabIndex = 1;
             // 
             // btnBoot
@@ -65,10 +66,10 @@
             this.btnBoot.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBoot.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBoot.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnBoot.Location = new System.Drawing.Point(-6, 81);
-            this.btnBoot.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnBoot.Location = new System.Drawing.Point(-4, 66);
+            this.btnBoot.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBoot.Name = "btnBoot";
-            this.btnBoot.Size = new System.Drawing.Size(523, 61);
+            this.btnBoot.Size = new System.Drawing.Size(392, 50);
             this.btnBoot.TabIndex = 1;
             this.btnBoot.Text = "Một người chơi";
             this.btnBoot.UseVisualStyleBackColor = false;
@@ -79,10 +80,10 @@
             this.btnPlayer.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnPlayer.Font = new System.Drawing.Font("Arial", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnPlayer.ForeColor = System.Drawing.SystemColors.Window;
-            this.btnPlayer.Location = new System.Drawing.Point(-6, 0);
-            this.btnPlayer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPlayer.Location = new System.Drawing.Point(-4, 0);
+            this.btnPlayer.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnPlayer.Name = "btnPlayer";
-            this.btnPlayer.Size = new System.Drawing.Size(523, 62);
+            this.btnPlayer.Size = new System.Drawing.Size(392, 50);
             this.btnPlayer.TabIndex = 0;
             this.btnPlayer.Text = "Hai người chơi";
             this.btnPlayer.UseVisualStyleBackColor = false;
@@ -95,10 +96,10 @@
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnMenuLevel});
-            this.menuStrip1.Location = new System.Drawing.Point(308, 478);
+            this.menuStrip1.Location = new System.Drawing.Point(231, 388);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(111, 35);
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(94, 30);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menu";
             // 
@@ -111,7 +112,7 @@
             this.btnMenuLevel.Font = new System.Drawing.Font("Arial", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMenuLevel.ForeColor = System.Drawing.Color.Gold;
             this.btnMenuLevel.Name = "btnMenuLevel";
-            this.btnMenuLevel.Size = new System.Drawing.Size(104, 31);
+            this.btnMenuLevel.Size = new System.Drawing.Size(88, 26);
             this.btnMenuLevel.Text = "Cấp độ";
             this.btnMenuLevel.Click += new System.EventHandler(this.btnMenuLevel_Click);
             // 
@@ -120,7 +121,7 @@
             this.btnBasic.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnBasic.ForeColor = System.Drawing.SystemColors.Window;
             this.btnBasic.Name = "btnBasic";
-            this.btnBasic.Size = new System.Drawing.Size(224, 32);
+            this.btnBasic.Size = new System.Drawing.Size(118, 26);
             this.btnBasic.Text = "Dễ";
             this.btnBasic.Click += new System.EventHandler(this.btnBasic_Click);
             // 
@@ -129,20 +130,21 @@
             this.btnAdvanced.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnAdvanced.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAdvanced.Name = "btnAdvanced";
-            this.btnAdvanced.Size = new System.Drawing.Size(224, 32);
+            this.btnAdvanced.Size = new System.Drawing.Size(118, 26);
             this.btnAdvanced.Text = "Khó";
             this.btnAdvanced.Click += new System.EventHandler(this.btnAdvanced_Click);
             // 
             // menuStrip3
             // 
+            this.menuStrip3.BackColor = System.Drawing.Color.Transparent;
             this.menuStrip3.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip3.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.btnSetting});
-            this.menuStrip3.Location = new System.Drawing.Point(975, 36);
+            this.menuStrip3.Location = new System.Drawing.Point(731, 29);
             this.menuStrip3.Name = "menuStrip3";
-            this.menuStrip3.Padding = new System.Windows.Forms.Padding(5, 2, 0, 2);
-            this.menuStrip3.Size = new System.Drawing.Size(42, 28);
+            this.menuStrip3.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip3.Size = new System.Drawing.Size(154, 24);
             this.menuStrip3.TabIndex = 3;
             this.menuStrip3.Text = "menuStrip3";
             // 
@@ -154,7 +156,7 @@
             this.btnAudio,
             this.btnLanguage});
             this.btnSetting.Name = "btnSetting";
-            this.btnSetting.Size = new System.Drawing.Size(35, 24);
+            this.btnSetting.Size = new System.Drawing.Size(28, 20);
             this.btnSetting.Text = "   ";
             this.btnSetting.Click += new System.EventHandler(this.btnSetting_Click);
             // 
@@ -167,7 +169,7 @@
             this.btnAudio.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAudio.ForeColor = System.Drawing.SystemColors.Window;
             this.btnAudio.Name = "btnAudio";
-            this.btnAudio.Size = new System.Drawing.Size(187, 28);
+            this.btnAudio.Size = new System.Drawing.Size(154, 24);
             this.btnAudio.Text = "Âm thanh";
             this.btnAudio.Click += new System.EventHandler(this.btnAudio_Click);
             // 
@@ -175,7 +177,7 @@
             // 
             this.onToolStripMenuItem.BackColor = System.Drawing.Color.LightSeaGreen;
             this.onToolStripMenuItem.Name = "onToolStripMenuItem";
-            this.onToolStripMenuItem.Size = new System.Drawing.Size(124, 28);
+            this.onToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.onToolStripMenuItem.Text = "On";
             this.onToolStripMenuItem.Click += new System.EventHandler(this.onToolStripMenuItem_Click);
             // 
@@ -183,7 +185,7 @@
             // 
             this.offToolStripMenuItem.BackColor = System.Drawing.Color.LightSeaGreen;
             this.offToolStripMenuItem.Name = "offToolStripMenuItem";
-            this.offToolStripMenuItem.Size = new System.Drawing.Size(124, 28);
+            this.offToolStripMenuItem.Size = new System.Drawing.Size(100, 24);
             this.offToolStripMenuItem.Text = "Off";
             this.offToolStripMenuItem.Click += new System.EventHandler(this.offToolStripMenuItem_Click);
             // 
@@ -196,7 +198,7 @@
             this.btnLanguage.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLanguage.ForeColor = System.Drawing.SystemColors.Window;
             this.btnLanguage.Name = "btnLanguage";
-            this.btnLanguage.Size = new System.Drawing.Size(187, 28);
+            this.btnLanguage.Size = new System.Drawing.Size(154, 24);
             this.btnLanguage.Text = "Ngôn ngữ";
             this.btnLanguage.Click += new System.EventHandler(this.btnLanguage_Click);
             // 
@@ -204,7 +206,7 @@
             // 
             this.btnTV.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnTV.Name = "btnTV";
-            this.btnTV.Size = new System.Drawing.Size(189, 28);
+            this.btnTV.Size = new System.Drawing.Size(155, 24);
             this.btnTV.Text = "Tiếng Việt";
             this.btnTV.Click += new System.EventHandler(this.btnTV_Click);
             // 
@@ -212,7 +214,7 @@
             // 
             this.btnTA.BackColor = System.Drawing.Color.LightSeaGreen;
             this.btnTA.Name = "btnTA";
-            this.btnTA.Size = new System.Drawing.Size(189, 28);
+            this.btnTA.Size = new System.Drawing.Size(155, 24);
             this.btnTA.Text = "Tiếng Anh";
             this.btnTA.Click += new System.EventHandler(this.btnTA_Click);
             // 
@@ -223,21 +225,21 @@
             this.panel1.Controls.Add(this.menuStrip1);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1075, 558);
+            this.panel1.Size = new System.Drawing.Size(806, 453);
             this.panel1.TabIndex = 0;
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1075, 560);
+            this.ClientSize = new System.Drawing.Size(806, 455);
             this.Controls.Add(this.menuStrip3);
             this.Controls.Add(this.panel1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "Form2";
             this.Text = "Form2";
             this.Load += new System.EventHandler(this.Form2_Load);

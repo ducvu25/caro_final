@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -60,9 +61,7 @@ namespace Caro
             if (timePlayer1 <= 0)
             {
                 timerPlayer1.Stop();
-                MessageBox.Show("Player 1 has run out of time!");
-                InitializeBoard();
-                Invalidate();
+                this.EndGame(this.txtNamePlayer2.Text + " " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessWin, GameManager.Instance.language] + "!");
             }
         }
 
@@ -74,9 +73,7 @@ namespace Caro
             if (timePlayer2 <= 0)
             {
                 timerPlayer2.Stop();
-                MessageBox.Show("Player 2 has run out of time!");
-                InitializeBoard();
-                Invalidate();
+                this.EndGame(this.txtNamePlayer1.Text + " " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessWin, GameManager.Instance.language] + "!");
             }
         }
         private void InitializeBoard()
@@ -102,11 +99,14 @@ namespace Caro
                 g.DrawLine(new Pen(Color.Black, LineThickness), Margin2 + i * CellSize, Margin2, Margin2 + i * CellSize, Margin2 + GameManager.Instance.BoardSizeM * CellSize);
             }
         }
-        private void DrawPiece(Graphics g, int row, int col, Color color)
+        private void DrawPiece(Graphics g, int row, int col, int index)
         {
             int x = Margin2 + col * CellSize;
             int y = Margin2 + row * CellSize;
-            g.FillEllipse(new SolidBrush(color), x + LineThickness, y + LineThickness, CellSize - 2 * LineThickness, CellSize - 2 * LineThickness);
+            string imagePath = GameManager.Instance.getPathImg(index);
+            Image pieceImage = Image.FromFile(imagePath);
+            int imageSize = CellSize - 2 * LineThickness;
+            g.DrawImage(pieceImage, x + LineThickness, y + LineThickness, imageSize, imageSize);
         }
         private void Form3_MouseClick(object sender, MouseEventArgs e)
         {
@@ -121,14 +121,14 @@ namespace Caro
                 {
                     if (GameManager.Instance.isPlayer1)
                     {
-                        DrawPiece(g, row, col, Color.Red);
+                        DrawPiece(g, row, col, 0);
                         timerPlayer2.Stop();
                         timerPlayer1.Start();
                         this.txtMess.Text = this.txtNamePlayer1.Text;
                     }
                     else
                     {
-                        DrawPiece(g, row, col, Color.Blue);
+                        DrawPiece(g, row, col, 1);
                         timerPlayer1.Stop();
                         timerPlayer2.Start();
                         this.txtMess.Text = this.txtNamePlayer2.Text;
@@ -137,10 +137,7 @@ namespace Caro
                 // Kiểm tra kết thúc trò chơi
                 if (GameManager.Instance.CheckWin() == 1)
                 {
-                    string winner = GameManager.Instance.isPlayer1 ? "Player 2" : "Player 1";
-                    MessageBox.Show(winner + " has won the game!");
-                    InitializeBoard();
-                    Invalidate();
+                    this.EndGame((GameManager.Instance.isPlayer1 ? this.txtNamePlayer1.Text : this.txtNamePlayer2.Text) + " " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessLoss, GameManager.Instance.language] + "!");
                 }
             }
         }
@@ -183,6 +180,14 @@ namespace Caro
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             DrawBoard(e.Graphics);
+        }
+        void EndGame(string mess)
+        {
+            Form5 f5 = new Form5();
+            this.Hide();
+            f5.SetMessen(mess, 1);
+            f5.ShowDialog();
+            this.Close();
         }
     }
 }

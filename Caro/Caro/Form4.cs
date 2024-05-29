@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,22 +72,20 @@ namespace Caro
             timerPlayer2.Start();
             this.txtMess.Text = this.txtNamePlayer2.Text;
             if (GameManager.Instance.level == 0)
-                GameManager.Instance.Bot(GameManager.Instance.board, ref xBot, ref yBot, GameManager.Instance.TC1, GameManager.Instance.PN1, 1);
+                GameManager.Instance.Bot(GameManager.Instance.board, ref xBot, ref yBot, GameManager.Instance.TC1, GameManager.Instance.PN1, -1);
             else
-                GameManager.Instance.Bot(GameManager.Instance.board, ref xBot, ref yBot, GameManager.Instance.TC2, GameManager.Instance.PN2, 1);
-            GameManager.Instance.board[xBot, yBot] = 2;
+                GameManager.Instance.Bot(GameManager.Instance.board, ref xBot, ref yBot, GameManager.Instance.TC2, GameManager.Instance.PN2, -1);
+            GameManager.Instance.board[xBot, yBot] = -1;
             using (Graphics g = panel2.CreateGraphics())
             {
-                DrawPiece(g, xBot, yBot, Color.Blue);
+                DrawPiece(g, xBot, yBot, 0);
             }
             timerPlayer2.Stop();
-            if (GameManager.Instance.CheckWin() == 2)
+            if (GameManager.Instance.CheckWin() == -1)
             {
-                string winner = "YOU LOSS";
-                MessageBox.Show(winner);
-                InitializeBoard();
-                Invalidate();
-            }else
+                this.EndGame("YOU " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessLoss, GameManager.Instance.language] + "!");
+            }
+            else
                 PlayerAttack();
         }
         private void TimerPlayer1_Tick(object sender, EventArgs e)
@@ -96,10 +95,7 @@ namespace Caro
 
             if (timePlayer1 <= 0)
             {
-                timerPlayer1.Stop();
-                MessageBox.Show("Player 1 has run out of time!");
-                InitializeBoard();
-                Invalidate();
+                this.EndGame("YOU " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessLoss, GameManager.Instance.language] + "!");
             }
         }
         private void TimerPlayer2_Tick(object sender, EventArgs e)
@@ -109,10 +105,7 @@ namespace Caro
 
             if (timePlayer2 <= 0)
             {
-                timerPlayer2.Stop();
-                MessageBox.Show("Player 2 has run out of time!");
-                InitializeBoard();
-                Invalidate();
+                this.EndGame("YOU " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessWin, GameManager.Instance.language] + "!");
             }
         }
         private void InitializeBoard()
@@ -139,11 +132,15 @@ namespace Caro
                 g.DrawLine(new Pen(Color.Black, LineThickness), Margin2 + i * CellSize, Margin2, Margin2 + i * CellSize, Margin2 + GameManager.Instance.BoardSizeM * CellSize);
             }
         }
-        private void DrawPiece(Graphics g, int row, int col, Color color)
+        private void DrawPiece(Graphics g, int row, int col, int index)
         {
             int x = Margin2 + col * CellSize;
             int y = Margin2 + row * CellSize;
-            g.FillEllipse(new SolidBrush(color), x + LineThickness, y + LineThickness, CellSize - 2 * LineThickness, CellSize - 2 * LineThickness);
+            
+            string imagePath = GameManager.Instance.getPathImg(index);
+            Image pieceImage = Image.FromFile(imagePath);
+            int imageSize = CellSize - 2 * LineThickness;
+            g.DrawImage(pieceImage, x + LineThickness, y + LineThickness, imageSize, imageSize);
         }
         private void Form3_MouseClick(object sender, MouseEventArgs e)
         {
@@ -156,14 +153,12 @@ namespace Caro
                 GameManager.Instance.board[row, col] = 1;
                 using (Graphics g = panel2.CreateGraphics())
                 {
-                    DrawPiece(g, row, col, Color.Red);
+                    DrawPiece(g, row, col, 1);
                 }
                 // Kiểm tra kết thúc trò chơi
                 if (GameManager.Instance.CheckWin() == 1)
                 {
-                    MessageBox.Show("YOU WIN!");
-                    InitializeBoard();
-                    Invalidate();
+                    this.EndGame("YOU " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessWin, GameManager.Instance.language] + "!");
                 }
                 BotAttack();
             }
@@ -204,9 +199,18 @@ namespace Caro
             GameManager.Instance.PlaySoundEffect(1);
             this.Close();
         }
+
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
             DrawBoard(e.Graphics);
+        }
+        void EndGame(string mess)
+        {
+            Form5 f5 = new Form5();
+            this.Hide();
+            f5.SetMessen(mess, 1);
+            f5.ShowDialog();
+            this.Close();
         }
     }
 }

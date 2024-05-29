@@ -25,7 +25,11 @@ public enum TITLE_FORM
     f3BtnQuit,
     // f4
     f4BtnContinue,
-    f4BtnQuit
+    f4BtnQuit,
+    f5BtnPlayAgain,
+    f5BtnExit,
+    f5MessWin,
+    f5MessLoss
 }
 namespace Caro
 {
@@ -66,14 +70,24 @@ namespace Caro
             // F4
             {"Tiếp tục", "Contiune" },
             {"Màn hình chính", "Menu" },
+            // F5
+            {"Chơi lại", "Play again" },
+            {"Thoát", "Exit" },
+            {"thắng", "Win"},
+            {"thua", "Loss" }
         };
         private SoundPlayer backgroundMusic;
         private WindowsMediaPlayer[] soundEffectPlayers = new WindowsMediaPlayer[2];
-
+        string pathResourse = "C:\\Learn\\caro_final\\Caro\\Caro\\Resources\\";
+        string[] imgs = { "x.png", "o.png" };
+        public string getPathImg(int type)
+        {
+            return pathResourse + imgs[type];
+        }
         public void LoadAudio()
         {
-            // string path = "C:\\Learn\\caro_v3\\caro_v2\\Caro\\Caro\\Caro\\Resources\\Audio\\";
-            string path = "D:\\BaiTap\\Caro\\Caro\\Resources\\Audio\\";
+            string path = "C:\\Learn\\caro_v3\\caro_v2\\Caro\\Caro\\Caro\\Resources\\Audio\\";
+            //string path = "D:\\BaiTap\\Caro\\Caro\\Resources\\Audio\\";
 
             // Nạp nhạc nền
             backgroundMusic = new SoundPlayer(path + "a_BG.wav");
@@ -101,10 +115,10 @@ namespace Caro
         }
 
 
-        public long[] TC1 = { 0, 2, 3, 8, 100, 12288, 98304 };
+        public long[] TC1 = { 0, 2, 3, 8, 500, 12288, 98304 };
         public long[] PN1 = { 0, 1, 9, 12, 210, 600, 59999 };
-        public long[] TC2 = { 0, 3, 5, 81, 2810, 12200, 90304 };
-        public long[] PN2 = { 0, 1, 9, 200, 729, 6561, 59999 };
+        public long[] TC2 = { 0, 3, 5, 181, 2810, 12200, 90304 };
+        public long[] PN2 = { 0, 1, 9, 100, 729, 6561, 59999 };
 
         public int BoardSizeM = 15;
         public int BoardSizeN = 34;

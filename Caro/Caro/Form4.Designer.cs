@@ -134,36 +134,38 @@
             // 
             // txtTimePlayer2
             // 
+            this.txtTimePlayer2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimePlayer2.Location = new System.Drawing.Point(528, 89);
             this.txtTimePlayer2.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimePlayer2.Name = "txtTimePlayer2";
-            this.txtTimePlayer2.Size = new System.Drawing.Size(76, 20);
+            this.txtTimePlayer2.ReadOnly = true;
+            this.txtTimePlayer2.Size = new System.Drawing.Size(76, 22);
             this.txtTimePlayer2.TabIndex = 8;
             this.txtTimePlayer2.Text = "Time";
-            this.txtTimePlayer2.ReadOnly = true;
             this.txtTimePlayer2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // txtTimePlayer1
             // 
+            this.txtTimePlayer1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTimePlayer1.Location = new System.Drawing.Point(108, 89);
             this.txtTimePlayer1.Margin = new System.Windows.Forms.Padding(2);
             this.txtTimePlayer1.Name = "txtTimePlayer1";
-            this.txtTimePlayer1.Size = new System.Drawing.Size(76, 20);
+            this.txtTimePlayer1.ReadOnly = true;
+            this.txtTimePlayer1.Size = new System.Drawing.Size(76, 22);
             this.txtTimePlayer1.TabIndex = 7;
             this.txtTimePlayer1.Text = "time";
-            this.txtTimePlayer1.ReadOnly = true;
             // 
             // txtMess
             // 
-            this.txtMess.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMess.Font = new System.Drawing.Font("Harlow Solid Italic", 9.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMess.ForeColor = System.Drawing.Color.Red;
             this.txtMess.Location = new System.Drawing.Point(246, 89);
             this.txtMess.Margin = new System.Windows.Forms.Padding(2);
             this.txtMess.Name = "txtMess";
-            this.txtMess.Size = new System.Drawing.Size(210, 26);
+            this.txtMess.ReadOnly = true;
+            this.txtMess.Size = new System.Drawing.Size(210, 24);
             this.txtMess.TabIndex = 6;
             this.txtMess.Text = "Good !";
-            this.txtMess.ReadOnly = true;
             this.txtMess.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // panel6
@@ -214,9 +216,9 @@
             this.txtNamePlayer2.Location = new System.Drawing.Point(406, 47);
             this.txtNamePlayer2.Margin = new System.Windows.Forms.Padding(2);
             this.txtNamePlayer2.Name = "txtNamePlayer2";
+            this.txtNamePlayer2.ReadOnly = true;
             this.txtNamePlayer2.Size = new System.Drawing.Size(198, 29);
             this.txtNamePlayer2.TabIndex = 1;
-            this.txtNamePlayer2.ReadOnly = true;
             // 
             // txtNamePlayer1
             // 
@@ -228,7 +230,6 @@
             this.txtNamePlayer1.Name = "txtNamePlayer1";
             this.txtNamePlayer1.Size = new System.Drawing.Size(199, 29);
             this.txtNamePlayer1.TabIndex = 0;
-            this.txtNamePlayer2.ReadOnly = true;
             // 
             // Form4
             // 
