@@ -121,14 +121,14 @@ namespace Caro
                 {
                     if (GameManager.Instance.isPlayer1)
                     {
-                        DrawPiece(g, row, col, 0);
+                        DrawPiece(g, row, col, 1);
                         timerPlayer2.Stop();
                         timerPlayer1.Start();
                         this.txtMess.Text = this.txtNamePlayer1.Text;
                     }
                     else
                     {
-                        DrawPiece(g, row, col, 1);
+                        DrawPiece(g, row, col, 0);
                         timerPlayer1.Stop();
                         timerPlayer2.Start();
                         this.txtMess.Text = this.txtNamePlayer2.Text;
@@ -185,7 +185,7 @@ namespace Caro
         {
             Form5 f5 = new Form5();
             this.Hide();
-            f5.SetMessen(mess, 1);
+            f5.SetMessen(mess, 0);
             f5.ShowDialog();
             this.Close();
         }

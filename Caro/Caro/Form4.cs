@@ -78,7 +78,7 @@ namespace Caro
             GameManager.Instance.board[xBot, yBot] = -1;
             using (Graphics g = panel2.CreateGraphics())
             {
-                DrawPiece(g, xBot, yBot, 0);
+                DrawPiece(g, xBot, yBot, 1);
             }
             timerPlayer2.Stop();
             if (GameManager.Instance.CheckWin() == -1)
@@ -153,7 +153,7 @@ namespace Caro
                 GameManager.Instance.board[row, col] = 1;
                 using (Graphics g = panel2.CreateGraphics())
                 {
-                    DrawPiece(g, row, col, 1);
+                    DrawPiece(g, row, col, 0);
                 }
                 // Kiểm tra kết thúc trò chơi
                 if (GameManager.Instance.CheckWin() == 1)
