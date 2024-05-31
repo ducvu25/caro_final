@@ -135,9 +135,10 @@ namespace Caro
                     }
                 }
                 // Kiểm tra kết thúc trò chơi
-                if (GameManager.Instance.CheckWin() == 1)
+                int winner = GameManager.Instance.CheckWin();
+                if ( winner != 0)
                 {
-                    this.EndGame((GameManager.Instance.isPlayer1 ? this.txtNamePlayer1.Text : this.txtNamePlayer2.Text) + " " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessLoss, GameManager.Instance.language] + "!");
+                    this.EndGame((winner == 1 ? this.txtNamePlayer1.Text : this.txtNamePlayer2.Text) + " " + GameManager.Instance.txtTitle[(int)TITLE_FORM.f5MessWin, GameManager.Instance.language] + "!");
                 }
             }
         }
