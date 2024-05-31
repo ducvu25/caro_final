@@ -183,7 +183,7 @@ namespace Caro
             return 0;
         }
         long DiemTC(int x, int y, int[,] a, long[] TC, long[] PN, int u, int v, int player)
-        {
+        {// u, v là giá trị tương ứng khi ta xét hướng, player là giá trị của quân ta, x, y là vị trí đang xét
             long diemTong = 0;
             int ta = 0, dich = 0;
             if (u == -1 && v == 1)
